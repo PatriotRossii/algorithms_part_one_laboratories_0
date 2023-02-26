@@ -4,19 +4,13 @@ import edu.princeton.cs.algs4.StdRandom;
 
 public class RandomWord {
     public static void main(String[] args) {
-        if (StdIn.isEmpty()) {
-            StdOut.println("Please, gimme some words!");
-            return;
-        }
-
-        String champion = StdIn.readString();
+        String champion = "";
         for (int i = 1; !StdIn.isEmpty(); ++i) {
             String possibleChampion = StdIn.readString();
             if (StdRandom.bernoulli(1.0 / i)) {
                 champion = possibleChampion;
             }
         }
-
         StdOut.println(champion);
     }
 }
